@@ -3,15 +3,18 @@ import "./App.css";
 import { Header } from "./components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { Home } from "./pages";
+import { Home, Page404 } from "./pages";
 
 function App() {
-  let routePath = [{ path: "/", element: <Home /> }];
+  let routePath = [
+    { path: "/", element: <Home /> },
+    { path: "*", element: <Page404 /> },
+  ];
   return (
     <div className="App">
-      <Header />
       {/* new version switch is change to routes */}
       <BrowserRouter>
+        <Header />
         <Routes>
           {routePath.map((val, index) => {
             return (

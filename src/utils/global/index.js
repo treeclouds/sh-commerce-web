@@ -98,6 +98,9 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+
+  font-family: "Inter", sans-serif;
+
 }
 // HTML5 display-role reset for older browsers
 article,
@@ -181,7 +184,8 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: Oswald, sans-serif;
+  font-family: "Inter", sans-serif;
+
   font-style: normal;
 }
 
@@ -189,7 +193,8 @@ p,
 a,
 span,
 button {
-  font-family: Poppins, sans-serif;
+  font-family: "Inter", sans-serif;
+
   font-style: normal;
   font-weight: 400;
   font-size: 0.875rem;
