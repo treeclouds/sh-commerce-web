@@ -41,7 +41,7 @@ const NotFoundPage = () => {
     <NotFoundContainer>
       <NotFoundTitle>404 - Page Not Found</NotFoundTitle>
       <NotFoundMessage>Oops! The page you are looking is temporarily unavailable.</NotFoundMessage>
-      <ReturnButton to="/">Return to Home</ReturnButton>
+      <ReturnButton to="/home">Return to Home</ReturnButton>
     </NotFoundContainer>
   );
 }
