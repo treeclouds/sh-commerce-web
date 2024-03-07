@@ -25,8 +25,8 @@ const Header = () => {
 
   return (
     <WrapperHeader >
-      <div onClick={()=>handlePush("/")} className={pathname === "/" ? "active" : ""}>
-        <img src={pathname === "/" ? HomeDark : HomeLight} alt="home-icon" />
+      <div onClick={()=>handlePush("/home")} className={pathname === "/home" ? "active" : ""}>
+        <img src={pathname === "/home" ? HomeDark : HomeLight} alt="home-icon" />
         <p>Home</p>
       </div>
       <div onClick={()=>handlePush("/chat")} className={pathname === "/chat" ? "active" : ""}>

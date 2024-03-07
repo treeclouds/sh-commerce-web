@@ -1,23 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import { ThemeProvider } from 'styled-components'
-import { colors, fonts, GlobalStyle } from './utils'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import { ThemeProvider } from "styled-components";
+import { colors, fonts, GlobalStyle } from "./utils";
 const global = {
-  colors, fonts
-}
-const root = ReactDOM.createRoot(document.getElementById('root'));
+  colors,
+  fonts,
+};
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-     <ThemeProvider theme={global}>
-     <GlobalStyle/>
-
-
-    <App />
-     </ThemeProvider>
+    <ThemeProvider theme={global}>
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
 

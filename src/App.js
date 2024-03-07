@@ -1,22 +1,21 @@
 import React from "react";
-import "./App.css";
-import { Menu } from "./components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
 
-import { Home, Page404, Profile } from "./pages";
+import { Home, LandingPage, Page404, Profile } from "./pages";
 
 function App() {
-  let routePath = [
-    { path: "/", element: <Home /> },
-    { path: "/profile", element: <Profile /> },
 
+  let routePath = [
+    { path: "/", element: <LandingPage /> },
+    { path: "/profile", element: <Profile /> },
+    { path: "/home", element: <Home /> },
     { path: "*", element: <Page404 /> },
   ];
+
   return (
     <div className="App">
-      {/* new version switch is change to routes */}
       <BrowserRouter>
-        <Menu />
         <Routes>
           {routePath.map((val, index) => {
             return (

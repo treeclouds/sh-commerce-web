@@ -1,8 +1,12 @@
 import React from 'react'
+import { Menu } from '../../components'
 
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <div>Profile
+
+      <Menu/>
+    </div>
   )
 }
 

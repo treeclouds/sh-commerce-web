@@ -13,7 +13,11 @@ import UpdateLight from "./update-light.svg";
 import UploadDark from "./upload-dark.svg";
 import UploadLight from "./upload-light.svg";
 
+import LandingPageBackground from "./landing-page.jpg";
+
+
 export {
+  LandingPageBackground,
   HomeDark,
   HomeLight,
   ChatDark,
