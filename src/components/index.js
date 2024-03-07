@@ -1,5 +1,5 @@
-import Header from './header'
+import Menu from './Menu'
 
 export {
-  Header
+  Menu
 }

@@ -1,20 +1,22 @@
 import React from "react";
 import "./App.css";
-import { Header } from "./components";
+import { Menu } from "./components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { Home, Page404 } from "./pages";
+import { Home, Page404, Profile } from "./pages";
 
 function App() {
   let routePath = [
     { path: "/", element: <Home /> },
+    { path: "/profile", element: <Profile /> },
+
     { path: "*", element: <Page404 /> },
   ];
   return (
     <div className="App">
       {/* new version switch is change to routes */}
       <BrowserRouter>
-        <Header />
+        <Menu />
         <Routes>
           {routePath.map((val, index) => {
             return (

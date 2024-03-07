@@ -8,6 +8,7 @@ export const WrapperHeader = styled.div`
   width: 100%;
 
 
+
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-content: center; /* Center horizontally */
@@ -16,6 +17,7 @@ export const WrapperHeader = styled.div`
 
   div{
     padding:15% ;
+    cursor: pointer;
   }
 
   .active{
