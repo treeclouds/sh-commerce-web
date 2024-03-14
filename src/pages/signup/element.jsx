@@ -9,4 +9,10 @@ export const Wrapper = styled.div`
   .form {
     flex-grow: 1;
   }
+  .warning-password{
+    display:flex;
+    flex-direction:row;
+    gap: 10px;
+    align-items:center ;
+  }
 `;

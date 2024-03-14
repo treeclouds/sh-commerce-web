@@ -15,8 +15,13 @@ import UploadLight from "./upload-light.svg";
 
 import LandingPageBackground from "./landing-page.jpg";
 import ChevronLeft from "./chevron-left.svg";
+import WarningIcon from "./warning.svg";
+import SuccessIcon from "./success.svg";
+
 
 export {
+  WarningIcon,
+  SuccessIcon,
   ChevronLeft,
   LandingPageBackground,
   HomeDark,

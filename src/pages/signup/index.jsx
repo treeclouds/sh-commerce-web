@@ -1,16 +1,46 @@
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { IconButton, InputAdornment, TextField, Button } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Gap, Header } from "../../components";
-
+import { SuccessIcon, WarningIcon } from "../../images";
+import CheckIcon from "@mui/icons-material/Check";
+import ClearIcon from "@mui/icons-material/Clear";
 import { Wrapper } from "./element";
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(true);
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [firstname, setFirstName] = useState("");
+  // const [lastname, setLastName] = useState("");
+  const [isPasswordValid, setPasswordValid] = useState(false);
+
+  useEffect(() => {
+    setPasswordValid(validatePassword(password, firstname, email));
+  }, [password, email, firstname]);
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "email") setEmail(value);
+    if (name === "password") setPassword(value);
+    if (name === "firstname") setFirstName(value);
+    // if (name === "lastname") setLastName(value);
+  };
+
+  const validatePassword = (password, firstname, email) => {
+    const passwordLengthValid = password.length >= 8;
+    const hasSymbolOrNumber = /[!@#$%^&*()_+[\]{};':"\\|,.<>/?]/.test(password);
+    const doesNotContainNameOrEmail = !password.toLowerCase().includes(firstname.toLowerCase()) &&
+      !password.toLowerCase().includes(email.toLowerCase());
+    const noSpaces = !/\s/.test(password);
+    return passwordLengthValid && hasSymbolOrNumber && doesNotContainNameOrEmail && noSpaces;
+  };
+
   return (
     <Wrapper>
       <Header title="Sign up" />
@@ -20,7 +50,9 @@ const SignUpPage = () => {
           fullWidth
           id="outlined-basic"
           label="First Name"
+          name="firstname"
           variant="outlined"
+          onChange={handleChange}
         />
         <Gap height="20px" />
 
@@ -28,7 +60,9 @@ const SignUpPage = () => {
           fullWidth
           id="outlined-basic"
           label="Last Name"
+          name="lastname"
           variant="outlined"
+          onChange={handleChange}
         />
         <Gap height="20px" />
 
@@ -37,12 +71,16 @@ const SignUpPage = () => {
           id="outlined-basic"
           label="Email"
           variant="outlined"
+          name="email"
+          onChange={handleChange}
         />
 
         <Gap height="20px" />
         <TextField
+          onChange={handleChange}
           id="display-name"
           fullWidth
+          name="password"
           type={showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
@@ -60,6 +98,57 @@ const SignUpPage = () => {
           }}
           label="Password"
         />
+
+        <Gap height="20px" />
+        {isPasswordValid ? (
+          <div>
+            <div className="warning-password">
+              <img src={SuccessIcon} alt="warning" />
+              <p>Password strength: excellent</p>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <div className="warning-password">
+              <img src={WarningIcon} alt="warning" />
+              <p>Password Strength: Weak</p>
+            </div>
+            <div className="warning-password">
+              {password.length < 8 ? (
+                <ClearIcon fontSize="small" />
+              ) : (
+                <CheckIcon fontSize="small" />
+              )}
+              <p>Must be at least 8 characters</p>
+            </div>
+            <div className="warning-password">
+              {!/[!@#$%^&*()_+[\]{};':"\\|,.<>/?]/.test(password) ? (
+                <ClearIcon fontSize="small" />
+              ) : (
+                <CheckIcon fontSize="small" />
+              )}
+              <p>Must have at least one symbol or number</p>
+            </div>
+            <div className="warning-password">
+              {password.toLowerCase().includes(firstname.toLowerCase()) ||
+              password.toLowerCase().includes(email.toLowerCase()) ? (
+                <ClearIcon fontSize="small" />
+              ) : (
+                <CheckIcon fontSize="small" />
+              )}
+
+              <p>Can not include your name or email address</p>
+            </div>
+            <div className="warning-password">
+              {/\s/.test(password) ? (
+                <ClearIcon fontSize="small" />
+              ) : (
+                <CheckIcon fontSize="small" />
+              )}
+              <p>Can not contain spaces</p>
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="end">
@@ -77,7 +166,12 @@ const SignUpPage = () => {
         </p>
         <Gap height="20px" />
 
-        <Button fullWidth disabled={true} variant="contained" color="secondary">
+        <Button
+          fullWidth
+          disabled={isPasswordValid === false}
+          variant="contained"
+          color="secondary"
+        >
           Agree and Continue
         </Button>
         <Gap height="10px" />
