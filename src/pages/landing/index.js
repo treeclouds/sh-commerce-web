@@ -28,7 +28,7 @@ const LandingPage = () => {
         text="Start Selling"
         color="#1F1F1F"
         width="60%"
-        onClick={() => handleClick("/sign-up")}
+        onClick={() => handleClick("/signup")}
       />
 
       <Gap height="120px" />

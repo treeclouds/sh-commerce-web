@@ -1,7 +1,5 @@
-
-import { createGlobalStyle } from 'styled-components'
-import { screensize } from '../screens'
-
+import { createGlobalStyle } from "styled-components";
+import { screensize } from "../screens";
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -219,9 +217,31 @@ h3{
   text-align:center;
 }
 
-.text-bold {
+.bold {
   font-weight: bold;
 }
 
+.h4-bold{
+  font-family: "Inter", sans-serif;
 
-`
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.body-2{
+  font-family: "Inter", sans-serif;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.underline-custom{
+  color:#7E49FF;
+  text-decoration-line: underline;
+}
+
+`;

@@ -14,9 +14,10 @@ import UploadDark from "./upload-dark.svg";
 import UploadLight from "./upload-light.svg";
 
 import LandingPageBackground from "./landing-page.jpg";
-
+import ChevronLeft from "./chevron-left.svg";
 
 export {
+  ChevronLeft,
   LandingPageBackground,
   HomeDark,
   HomeLight,
