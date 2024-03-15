@@ -8,12 +8,14 @@ import CheckIcon from "@mui/icons-material/Check";
 import ClearIcon from "@mui/icons-material/Clear";
 import { Wrapper } from "./element";
 const SignUpPage = () => {
-  const [showPassword, setShowPassword] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [firstname, setFirstName] = useState("");
-  // const [lastname, setLastName] = useState("");
+  const [lastname, setLastName] = useState("");
   const [isPasswordValid, setPasswordValid] = useState(false);
+  const [emailValid, setEmailValid] = useState(true);
+
 
   useEffect(() => {
     setPasswordValid(validatePassword(password, firstname, email));
@@ -26,10 +28,20 @@ const SignUpPage = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "email") setEmail(value);
+    if (name === "email") {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const isValidEmail = emailPattern.test(value);
+      if (isValidEmail) {
+        setEmailValid(true)
+        setEmail(value);
+      } else {
+        setEmailValid(false)
+      }
+
+    }
     if (name === "password") setPassword(value);
     if (name === "firstname") setFirstName(value);
-    // if (name === "lastname") setLastName(value);
+    if (name === "lastname") setLastName(value);
   };
 
   const validatePassword = (password, firstname, email) => {
@@ -41,6 +53,20 @@ const SignUpPage = () => {
     return passwordLengthValid && hasSymbolOrNumber && doesNotContainNameOrEmail && noSpaces;
   };
 
+  const handleAgreeButton = ()=>{
+
+    if (isPasswordValid && emailValid){
+      let form ={
+        firstname:firstname,
+        lastname:lastname,
+        email:email,
+        password:password
+      }
+      console.log(form)
+    }else{
+      alert("check the form.. something is wrong")
+    }
+  }
   return (
     <Wrapper>
       <Header title="Sign up" />
@@ -73,6 +99,8 @@ const SignUpPage = () => {
           variant="outlined"
           name="email"
           onChange={handleChange}
+          error={!emailValid}
+          helperText={emailValid?"":"Please use valid email address"}
         />
 
         <Gap height="20px" />
@@ -100,55 +128,58 @@ const SignUpPage = () => {
         />
 
         <Gap height="20px" />
-        {isPasswordValid ? (
-          <div>
-            <div className="warning-password">
-              <img src={SuccessIcon} alt="warning" />
-              <p>Password strength: excellent</p>
-            </div>
-          </div>
-        ) : (
-          <div>
-            <div className="warning-password">
-              <img src={WarningIcon} alt="warning" />
-              <p>Password Strength: Weak</p>
-            </div>
-            <div className="warning-password">
-              {password.length < 8 ? (
-                <ClearIcon fontSize="small" />
-              ) : (
-                <CheckIcon fontSize="small" />
-              )}
-              <p>Must be at least 8 characters</p>
-            </div>
-            <div className="warning-password">
-              {!/[!@#$%^&*()_+[\]{};':"\\|,.<>/?]/.test(password) ? (
-                <ClearIcon fontSize="small" />
-              ) : (
-                <CheckIcon fontSize="small" />
-              )}
-              <p>Must have at least one symbol or number</p>
-            </div>
-            <div className="warning-password">
-              {password.toLowerCase().includes(firstname.toLowerCase()) ||
-              password.toLowerCase().includes(email.toLowerCase()) ? (
-                <ClearIcon fontSize="small" />
-              ) : (
-                <CheckIcon fontSize="small" />
-              )}
 
-              <p>Can not include your name or email address</p>
+        {password.length > 1 && <div>
+          {isPasswordValid ? (
+            <div>
+              <div className="warning-password">
+                <img src={SuccessIcon} alt="warning" />
+                <p>Password strength: excellent</p>
+              </div>
             </div>
-            <div className="warning-password">
-              {/\s/.test(password) ? (
-                <ClearIcon fontSize="small" />
-              ) : (
-                <CheckIcon fontSize="small" />
-              )}
-              <p>Can not contain spaces</p>
+          ) : (
+            <div>
+              <div className="warning-password">
+                <img src={WarningIcon} alt="warning" />
+                <p>Password Strength: Weak</p>
+              </div>
+              <div className="warning-password">
+                {password.length < 8 ? (
+                  <ClearIcon fontSize="small" />
+                ) : (
+                  <CheckIcon fontSize="small" />
+                )}
+                <p>Must be at least 8 characters</p>
+              </div>
+              <div className="warning-password">
+                {!/[!@#$%^&*()_+[\]{};':"\\|,.<>/?]/.test(password) ? (
+                  <ClearIcon fontSize="small" />
+                ) : (
+                  <CheckIcon fontSize="small" />
+                )}
+                <p>Must have at least one symbol or number</p>
+              </div>
+              <div className="warning-password">
+                {password.toLowerCase().includes(firstname.toLowerCase()) ||
+                password.toLowerCase().includes(email.toLowerCase()) ? (
+                  <ClearIcon fontSize="small" />
+                ) : (
+                  <CheckIcon fontSize="small" />
+                )}
+
+                <p>Can not include your name or email address</p>
+              </div>
+              <div className="warning-password">
+                {/\s/.test(password) ? (
+                  <ClearIcon fontSize="small" />
+                ) : (
+                  <CheckIcon fontSize="small" />
+                )}
+                <p>Can not contain spaces</p>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>}
       </div>
 
       <div className="end">
@@ -171,6 +202,7 @@ const SignUpPage = () => {
           disabled={isPasswordValid === false}
           variant="contained"
           color="secondary"
+          onClick={handleAgreeButton}
         >
           Agree and Continue
         </Button>
