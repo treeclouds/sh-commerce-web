@@ -18,8 +18,12 @@ import ChevronLeft from "./chevron-left.svg";
 import WarningIcon from "./warning.svg";
 import SuccessIcon from "./success.svg";
 
+import FilterLinesIcon from "./filter-lines.svg";
+
+
 
 export {
+  FilterLinesIcon,
   WarningIcon,
   SuccessIcon,
   ChevronLeft,
