@@ -7,6 +7,7 @@ export const WrapperHeader = styled.div`
   left: 0;
   width: 100%;
 
+  background-color: white ;
 
 
   display: grid;

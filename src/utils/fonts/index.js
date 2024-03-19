@@ -1,4 +1,4 @@
 export const fonts ={
-    primary: "Oswald, san-serif",
+    primary: "Inter, san-serif",
     secondary: "Poppins, san-serif"
 }

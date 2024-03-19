@@ -232,13 +232,27 @@ h3{
 
 .body-2{
   font-family: "Inter", sans-serif;
-
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
 }
 
+.caption-medium{
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+  .label-med{
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+  }
 .underline-custom{
   color:#7E49FF;
   text-decoration-line: underline;

@@ -17,4 +17,15 @@ export const colors = {
   black: "#000000",
 
   green: "#0E9F6E",
+  green100:"#DEF7EC",
+  green700:"#046C4E",
+
+  blue100:"#E1EFFE",
+  blue700:"#1A56DB",
+  
+  teal100:"#D5F5F6",
+  teal700:"#036672",
+
+  natural40:"#E0E0E0",
+  natural80:"#616161"
 };
