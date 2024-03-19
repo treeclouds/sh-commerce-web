@@ -4,6 +4,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import React, { useState } from "react";
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import Gap from "../Gap";
+import TypeLabel from "../TypeLabel";
 const Card = ({type="mint"}) => {
   const [favorite, setFavorite] = useState(false);
 
@@ -11,19 +12,6 @@ const Card = ({type="mint"}) => {
     setFavorite(!favorite);
   };
 
-
-
-  function getConditionText(type) {
-    if (type === 'mint') {
-      return 'Mint Condition';
-    } else if (type === 'like') {
-      return 'Like-new';
-    } else if (type === 'new') {
-      return 'Brand New';
-    } else {
-      return ''; // Default case if type doesn't match any condition
-    }
-  }
   return (
     <CardWrapper type={type}>
       <div className="image-section">
@@ -48,9 +36,8 @@ const Card = ({type="mint"}) => {
       </div>
 
       <div className="description-section">
-        <p className="type-section caption-medium">
-         {getConditionText(type)}
-        </p>
+     
+        <TypeLabel type={type}/>
         <p className="h4-bold">Product Title</p>
         <Gap height="4px"/>
         <p className="bold grey">Rp. 100,000</p>
