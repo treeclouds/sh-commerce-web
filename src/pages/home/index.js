@@ -39,8 +39,13 @@ const Home = () => {
           <CardFilter>Location</CardFilter>
           <CardFilter>Brand</CardFilter>
           <CardFilter>Category</CardFilter>
-          <CardFilter>CardFilter 5</CardFilter>
-          <CardFilter>CardFilter 6</CardFilter>
+          <CardFilter>Category</CardFilter>
+          <CardFilter>Category</CardFilter>
+          <CardFilter>Category</CardFilter>
+
+    
+         
+         
         </ScrollableContainer>
         <Gap height="10px" />
 

@@ -28,7 +28,7 @@ export const HomeWrapper = styled.div`
 export const ScrollableContainer = styled.div`
   display: grid;
   grid-auto-flow: column; /* Arrange grid items in columns horizontally */
-  gap: 2rem; /* Add gap between grid items */
+  gap: 3%; /* Add gap between grid items */
   overflow-x: auto; /* Enable horizontal scrolling */
 `;
 
@@ -37,7 +37,7 @@ export const CardFilter = styled.div`
   border: 1px solid var(--gray-800, #252f3f);
   background: var(--Surface, #fff);
   width: max-content;
-  padding: 15%;
+  padding: 10px;
   align-items: center;
   display: grid;
   grid-template-columns: auto 1fr ;
