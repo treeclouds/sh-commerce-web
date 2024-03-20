@@ -20,8 +20,11 @@ import SuccessIcon from "./success.svg";
 
 import FilterLinesIcon from "./filter-lines.svg";
 import WishlistBanner from "./wishlist.svg";
+import VerifiedIcon from "./verified.svg";
+
 
 export {
+  VerifiedIcon,
   WishlistBanner,
   FilterLinesIcon,
   WarningIcon,

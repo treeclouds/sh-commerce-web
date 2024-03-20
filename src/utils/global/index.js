@@ -264,5 +264,43 @@ font-style: normal;
 font-weight: 700;
 line-height: 140%;
 }
+.caption-bold{
+  font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.caption-reg{
+  font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.caption-semibold{
+  font-family: "Inter";
+font-size: 12px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.p-semibold{
+font-family: "Manrope";
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%;
+}
+.label-bold{
+font-family: "Inter";
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 22px; 
+}
 
+.show-more{
+  color:#7E3AF2;
+}
 `;

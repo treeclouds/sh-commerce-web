@@ -81,7 +81,7 @@ const Home = () => {
         <Gap height="10px" />
 
         <div className="card-container">
-          <CardProduct type="mint" />
+          <CardProduct type="mint" onClick={() => navigate("/product-detail/1")} />
           <CardProduct type="like" />
           <CardProduct type="mint" /> <CardProduct type="like" />
           <CardProduct type="like" />

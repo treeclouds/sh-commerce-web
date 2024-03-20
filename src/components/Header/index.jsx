@@ -10,7 +10,7 @@ const Header = ({title="use Props title"}) => {
       <div onClick={()=> navigate(-1)}>
         <img src={ChevronLeft} alt="Back" />
       </div>
-      <div className='h4-bold'>{title}</div>
+      <div className='h4-bold title'>{title}</div>
     </Wrapper>
   )
 }

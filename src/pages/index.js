@@ -4,5 +4,7 @@ import Profile from "./profile";
 import LandingPage from "./landing";
 import SignUpPage from "./signup";
 import Wishlist from "./wishlist";
+import ProductDetail from "./productdetail";
 
-export { Wishlist, Home, Page404, Profile, LandingPage, SignUpPage };
+
+export {ProductDetail, Wishlist, Home, Page404, Profile, LandingPage, SignUpPage };

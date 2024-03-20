@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import Gap from "../Gap";
 import LabelProductCondition from "../LabelProductCondition";
-const Card = ({type="mint"}) => {
+const Card = ({type="mint", onClick}) => {
   const [favorite, setFavorite] = useState(false);
 
   const HandleFavorite = () => {
@@ -13,7 +13,7 @@ const Card = ({type="mint"}) => {
   };
 
   return (
-    <CardWrapper type={type}>
+    <CardWrapper type={type} onClick={onClick}>
       <div className="image-section">
         <img
           src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"

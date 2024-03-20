@@ -13,6 +13,7 @@ export const colors = {
   grey5: "#ABBAC2",
   grey6: "#BDBDBD",
   grey7: "#C4C4C4",
+  grey100:"#F4F5F7",
 
   black: "#000000",
 
@@ -27,5 +28,7 @@ export const colors = {
   teal700:"#036672",
 
   natural40:"#E0E0E0",
-  natural80:"#616161"
+  natural80:"#616161",
+
+  purple700:"#6C2BD9"
 };
