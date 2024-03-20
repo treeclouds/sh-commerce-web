@@ -44,5 +44,18 @@ export const CardFilter = styled.div`
  
 `;
 
+export const DragboxContainer = styled.div`
+  display: grid;
+  padding:5% ;
+
+  .list-filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    align-items: center ;
+    padding: 5% 0;
+  }
+
+`
 
 
