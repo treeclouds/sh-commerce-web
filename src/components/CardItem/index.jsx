@@ -4,7 +4,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import React, { useState } from "react";
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import Gap from "../Gap";
-import TypeLabel from "../TypeLabel";
+import LabelProductCondition from "../LabelProductCondition";
 const Card = ({type="mint"}) => {
   const [favorite, setFavorite] = useState(false);
 
@@ -37,7 +37,7 @@ const Card = ({type="mint"}) => {
 
       <div className="description-section">
      
-        <TypeLabel type={type}/>
+        <LabelProductCondition type={type}/>
         <p className="h4-bold">Product Title</p>
         <Gap height="4px"/>
         <p className="bold grey">Rp. 100,000</p>

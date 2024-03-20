@@ -6,8 +6,11 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import TextField from "@mui/material/TextField";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { FilterLinesIcon } from "../../images";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <HomeWrapper>
@@ -17,7 +20,7 @@ const Home = () => {
             <p className="bold">Jakarta, Indonesia</p>
           </div>
           <div>
-            <FavoriteBorderOutlinedIcon />
+            <FavoriteBorderOutlinedIcon onClick={() => navigate("/wishlist")} />
           </div>
         </div>
         <Gap height="10px" />
@@ -42,10 +45,6 @@ const Home = () => {
           <CardFilter>Category</CardFilter>
           <CardFilter>Category</CardFilter>
           <CardFilter>Category</CardFilter>
-
-    
-         
-         
         </ScrollableContainer>
         <Gap height="10px" />
 

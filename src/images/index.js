@@ -19,10 +19,10 @@ import WarningIcon from "./warning.svg";
 import SuccessIcon from "./success.svg";
 
 import FilterLinesIcon from "./filter-lines.svg";
-
-
+import WishlistBanner from "./wishlist.svg";
 
 export {
+  WishlistBanner,
   FilterLinesIcon,
   WarningIcon,
   SuccessIcon,

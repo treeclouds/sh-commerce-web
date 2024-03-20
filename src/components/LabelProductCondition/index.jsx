@@ -1,7 +1,7 @@
 import React from "react";
 import { LabelTypeWrapper } from "./element";
 
-const TypeLabel = ({ type = "mint" }) => {
+const LabelProductCondition = ({ type = "mint" }) => {
   function getConditionText(type) {
     if (type === "mint") {
       return "Mint Condition";
@@ -10,7 +10,7 @@ const TypeLabel = ({ type = "mint" }) => {
     } else if (type === "new") {
       return "Brand New";
     } else {
-      return ""; // Default case if type doesn't match any condition
+      return ""; 
     }
   }
   return (
@@ -18,4 +18,4 @@ const TypeLabel = ({ type = "mint" }) => {
   );
 };
 
-export default TypeLabel;
+export default LabelProductCondition;

@@ -257,5 +257,12 @@ h3{
   color:#7E49FF;
   text-decoration-line: underline;
 }
+.p-bold{
+  font-family: "Inter";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 140%;
+}
 
 `;

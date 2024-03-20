@@ -3,11 +3,11 @@ import Button from './Button'
 import Gap from './Gap'
 import Header from './Header'
 import Card from './CardItem'
-import TypeLabel from './TypeLabel'
+import LabelProductCondition from './LabelProductCondition'
 
 
 export {
-  TypeLabel,
+  LabelProductCondition,
   Menu,
   Button,
   Gap,
