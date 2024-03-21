@@ -28,7 +28,6 @@ const ProductDetail = () => {
       <Header title={`Product Detail #${id}`} />
       <MenuProduct/>
 
-      {/* ============ START SLIDER SECTION =================== */}
       <Gap height="20px" />
       <Splide>
         <SplideSlide>
@@ -46,9 +45,6 @@ const ProductDetail = () => {
           ></iframe>
         </SplideSlide>
       </Splide>
-      {/* ============ END SLIDER SECTION =================== */}
-
-      {/* ============ START PRODUCTION DETAIL PRICE SECTION =================== */}
 
       <Gap height="20px" />
       <div>
@@ -136,10 +132,11 @@ const ProductDetail = () => {
       <hr className="hr-grey" />
 
       <Gap height="20px" />
-
       <p className="p-bold">Seller Profile</p>
       <Gap height="10px" />
       <CardProfile />
+      <Gap height="80px" />
+
     </Wrapper>
   );
 };
