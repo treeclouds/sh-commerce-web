@@ -257,50 +257,81 @@ h3{
   color:#7E49FF;
   text-decoration-line: underline;
 }
-.p-bold{
+.p-bold {
   font-family: "Inter";
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: 140%;
+  font-size: 1rem; /* 16px converted to rem */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* You can adjust the percentage as needed */
 }
-.caption-bold{
+
+.caption-bold {
   font-family: Inter;
-font-size: 12px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+  font-size: 0.75rem; /* 12px converted to rem */
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
-.caption-reg{
+
+.caption-reg {
   font-family: Inter;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  font-size: 0.75rem; /* 12px converted to rem */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-.caption-semibold{
+
+.caption-semibold {
   font-family: "Inter";
-font-size: 12px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
+  font-size: 0.75rem; /* 12px converted to rem */
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
-.p-semibold{
-font-family: "Manrope";
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 140%;
+
+.p-semibold {
+  font-family: "Manrope";
+  font-size: 1rem; /* 16px converted to rem */
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* You can adjust the percentage as needed */
 }
-.label-bold{
-font-family: "Inter";
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: 22px; 
+
+.label-bold {
+  font-family: "Inter";
+  font-size: 0.875rem; /* 14px converted to rem */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* You can adjust the percentage as needed */
 }
+
 
 .show-more{
   color:#7E3AF2;
 }
+
+.h3-bold {
+  font-family: Inter;
+  font-size: 1.375rem; /* 22px converted to rem */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* You can adjust the percentage as needed */
+}
+
+.h5-reg {
+  font-family: Inter;
+  font-size: 1.125rem; /* 18px converted to rem */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* You can adjust the percentage as needed */
+}
+
+.label-reg {
+  font-family: Inter;
+  font-size: 0.875rem; /* 14px converted to rem */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* You can adjust the percentage as needed */
+}
+
 `;

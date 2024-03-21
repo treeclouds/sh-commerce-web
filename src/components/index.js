@@ -5,10 +5,11 @@ import Header from './Header'
 import Card from './CardItem'
 import LabelProductCondition from './LabelProductCondition'
 import CardProfile from './CardProfile'
-
+import MenuProduct from './MenuProduct'
 
 
 export {
+  MenuProduct,
   CardProfile,
   LabelProductCondition,
   Menu,
