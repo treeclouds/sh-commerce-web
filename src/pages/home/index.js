@@ -39,9 +39,9 @@ const Home = () => {
     { id: 5, label: "Excellent" },
   ];
 
-  const handleFilterOption=(value)=>{
-    setFilterValue(value)
-  }
+  const handleFilterOption = (value) => {
+    setFilterValue(value);
+  };
   return (
     <>
       <HomeWrapper>
@@ -81,7 +81,10 @@ const Home = () => {
         <Gap height="10px" />
 
         <div className="card-container">
-          <CardProduct type="mint" onClick={() => navigate("/product-detail/1")} />
+          <CardProduct
+            type="mint"
+            onClick={() => navigate("/product-detail/1")}
+          />
           <CardProduct type="like" />
           <CardProduct type="mint" /> <CardProduct type="like" />
           <CardProduct type="like" />
@@ -100,15 +103,22 @@ const Home = () => {
           <Gap height="10px" />
           {filterOptions.map((option, key) => (
             <React.Fragment key={option.id}>
-              <div className="list-filter"  onClick={()=> handleFilterOption(option.label)}>
+              <div
+                className="list-filter"
+                onClick={() => handleFilterOption(option.label)}
+              >
                 <p>{option.label}</p>
-                {filterValue ===option.label ? <CheckIcon fontSize="small" />:null}
+                {filterValue === option.label ? (
+                  <CheckIcon fontSize="small" />
+                ) : null}
               </div>
               {key === filterOptions?.length - 1 ? null : <hr />}
             </React.Fragment>
           ))}
         </DragboxContainer>
       </SwipeableDrawer>
+      <Gap height="80px" />
+
       <Menu />
     </>
   );
