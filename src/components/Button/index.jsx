@@ -2,7 +2,7 @@ import React from "react";
 import { WrapperButton } from "./element";
 
 const Button = ({
-  colorFont = "#fff",
+  colorfont = "#fff",
   text = "Button",
   color = "white",
   width = "70%",
@@ -11,7 +11,7 @@ const Button = ({
   return (
     <WrapperButton
       onClick={onClick}
-      colorFont={colorFont}
+      colorfont={colorfont}
       color={color}
       width={width}
     >

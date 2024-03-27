@@ -61,7 +61,7 @@ const Wishlist = () => {
           <Button
             text="I don't have an account"
             color="#FFFFFF"
-            colorFont="black"
+            colorfont="black"
             width="85%"
             onClick={() => handleClick("/signup")}
           />

@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const WrapperButton = styled.div`
   padding: 12px 24px;
   background-color: ${(props) => props.color};
-  color: ${(props) => props.colorFont};
-  border: 1px solid  ${(props) => props.colorFont};
+  color: ${(props) => props.colorfont};
+  border: 1px solid  ${(props) => props.colorfont};
   border-radius: 5px;
   text-decoration: none;
   font-size: 1rem;

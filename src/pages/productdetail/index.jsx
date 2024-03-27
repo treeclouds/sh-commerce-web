@@ -29,7 +29,11 @@ const ProductDetail = () => {
       <MenuProduct/>
 
       <Gap height="20px" />
-      <Splide>
+      <Splide >
+      {/* <div className="splide__arrows">
+    <div className="splide__arrow splide__arrow--prev" style={{border:"1px solid red", width:"400px"}}>Prev</div>
+    <div className="splide__arrow splide__arrow--next">Next</div>
+  </div> */}
         <SplideSlide>
           <img className="slider-image" src={dummyImg} alt="ABCV 1" />
         </SplideSlide>
