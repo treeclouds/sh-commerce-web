@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import { Home, LandingPage, Page404, ProductDetail, Profile, SignUpPage, Wishlist } from "./pages";
+import { Home, LandingPage, Page404, ProductDetail, Profile, SignIn, SignUpPage, Wishlist } from "./pages";
 
 function App() {
 
@@ -14,6 +14,8 @@ function App() {
     { path: "*", element: <Page404 /> },
     { path: "/wishlist", element: <Wishlist /> },
     { path: "/product-detail/:id", element: <ProductDetail /> },
+    { path: "/signin", element: <SignIn /> },
+
 
 
   ];

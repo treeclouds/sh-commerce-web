@@ -7,7 +7,11 @@ import { SuccessIcon, WarningIcon } from "../../images";
 import CheckIcon from "@mui/icons-material/Check";
 import ClearIcon from "@mui/icons-material/Clear";
 import { Wrapper } from "./element";
+import { useNavigate } from "react-router-dom";
+
 const SignUpPage = () => {
+  const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -16,7 +20,6 @@ const SignUpPage = () => {
   const [isPasswordValid, setPasswordValid] = useState(false);
   const [emailValid, setEmailValid] = useState(true);
 
-
   useEffect(() => {
     setPasswordValid(validatePassword(password, firstname, email));
   }, [password, email, firstname]);
@@ -24,7 +27,9 @@ const SignUpPage = () => {
     event.preventDefault();
   };
   const handleClickShowPassword = () => setShowPassword((show) => !show);
-
+  const handlePush = (url) => {
+    navigate(url);
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -32,12 +37,11 @@ const SignUpPage = () => {
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const isValidEmail = emailPattern.test(value);
       if (isValidEmail) {
-        setEmailValid(true)
+        setEmailValid(true);
         setEmail(value);
       } else {
-        setEmailValid(false)
+        setEmailValid(false);
       }
-
     }
     if (name === "password") setPassword(value);
     if (name === "firstname") setFirstName(value);
@@ -47,26 +51,31 @@ const SignUpPage = () => {
   const validatePassword = (password, firstname, email) => {
     const passwordLengthValid = password.length >= 8;
     const hasSymbolOrNumber = /[!@#$%^&*()_+[\]{};':"\\|,.<>/?]/.test(password);
-    const doesNotContainNameOrEmail = !password.toLowerCase().includes(firstname.toLowerCase()) &&
+    const doesNotContainNameOrEmail =
+      !password.toLowerCase().includes(firstname.toLowerCase()) &&
       !password.toLowerCase().includes(email.toLowerCase());
     const noSpaces = !/\s/.test(password);
-    return passwordLengthValid && hasSymbolOrNumber && doesNotContainNameOrEmail && noSpaces;
+    return (
+      passwordLengthValid &&
+      hasSymbolOrNumber &&
+      doesNotContainNameOrEmail &&
+      noSpaces
+    );
   };
 
-  const handleAgreeButton = ()=>{
-
-    if (isPasswordValid && emailValid){
-      let form ={
-        firstname:firstname,
-        lastname:lastname,
-        email:email,
-        password:password
-      }
-      console.log(form)
-    }else{
-      alert("check the form.. something is wrong")
+  const handleAgreeButton = () => {
+    if (isPasswordValid && emailValid) {
+      let form = {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        password: password,
+      };
+      console.log(form);
+    } else {
+      alert("check the form.. something is wrong");
     }
-  }
+  };
   return (
     <Wrapper>
       <Header title="Sign up" />
@@ -100,7 +109,7 @@ const SignUpPage = () => {
           name="email"
           onChange={handleChange}
           error={!emailValid}
-          helperText={emailValid?"":"Please use valid email address"}
+          helperText={emailValid ? "" : "Please use valid email address"}
         />
 
         <Gap height="20px" />
@@ -129,57 +138,59 @@ const SignUpPage = () => {
 
         <Gap height="20px" />
 
-        {password.length > 1 && <div>
-          {isPasswordValid ? (
-            <div>
-              <div className="warning-password">
-                <img src={SuccessIcon} alt="warning" />
-                <p>Password strength: excellent</p>
+        {password.length > 1 && (
+          <div>
+            {isPasswordValid ? (
+              <div>
+                <div className="warning-password">
+                  <img src={SuccessIcon} alt="warning" />
+                  <p>Password strength: excellent</p>
+                </div>
               </div>
-            </div>
-          ) : (
-            <div>
-              <div className="warning-password">
-                <img src={WarningIcon} alt="warning" />
-                <p>Password Strength: Weak</p>
-              </div>
-              <div className="warning-password">
-                {password.length < 8 ? (
-                  <ClearIcon fontSize="small" />
-                ) : (
-                  <CheckIcon fontSize="small" />
-                )}
-                <p>Must be at least 8 characters</p>
-              </div>
-              <div className="warning-password">
-                {!/[!@#$%^&*()_+[\]{};':"\\|,.<>/?]/.test(password) ? (
-                  <ClearIcon fontSize="small" />
-                ) : (
-                  <CheckIcon fontSize="small" />
-                )}
-                <p>Must have at least one symbol or number</p>
-              </div>
-              <div className="warning-password">
-                {password.toLowerCase().includes(firstname.toLowerCase()) ||
-                password.toLowerCase().includes(email.toLowerCase()) ? (
-                  <ClearIcon fontSize="small" />
-                ) : (
-                  <CheckIcon fontSize="small" />
-                )}
+            ) : (
+              <div>
+                <div className="warning-password">
+                  <img src={WarningIcon} alt="warning" />
+                  <p>Password Strength: Weak</p>
+                </div>
+                <div className="warning-password">
+                  {password.length < 8 ? (
+                    <ClearIcon fontSize="small" />
+                  ) : (
+                    <CheckIcon fontSize="small" />
+                  )}
+                  <p>Must be at least 8 characters</p>
+                </div>
+                <div className="warning-password">
+                  {!/[!@#$%^&*()_+[\]{};':"\\|,.<>/?]/.test(password) ? (
+                    <ClearIcon fontSize="small" />
+                  ) : (
+                    <CheckIcon fontSize="small" />
+                  )}
+                  <p>Must have at least one symbol or number</p>
+                </div>
+                <div className="warning-password">
+                  {password.toLowerCase().includes(firstname.toLowerCase()) ||
+                  password.toLowerCase().includes(email.toLowerCase()) ? (
+                    <ClearIcon fontSize="small" />
+                  ) : (
+                    <CheckIcon fontSize="small" />
+                  )}
 
-                <p>Can not include your name or email address</p>
+                  <p>Can not include your name or email address</p>
+                </div>
+                <div className="warning-password">
+                  {/\s/.test(password) ? (
+                    <ClearIcon fontSize="small" />
+                  ) : (
+                    <CheckIcon fontSize="small" />
+                  )}
+                  <p>Can not contain spaces</p>
+                </div>
               </div>
-              <div className="warning-password">
-                {/\s/.test(password) ? (
-                  <ClearIcon fontSize="small" />
-                ) : (
-                  <CheckIcon fontSize="small" />
-                )}
-                <p>Can not contain spaces</p>
-              </div>
-            </div>
-          )}
-        </div>}
+            )}
+          </div>
+        )}
       </div>
 
       <div className="end">
@@ -210,7 +221,12 @@ const SignUpPage = () => {
 
         <p className="text-center">
           Have an account?
-          <span className="underline-custom bold">Sign in.</span>
+          <span
+            className="underline-custom bold"
+            onClick={() => handlePush("/signin")}
+          >
+            Sign in.
+          </span>
         </p>
       </div>
     </Wrapper>
