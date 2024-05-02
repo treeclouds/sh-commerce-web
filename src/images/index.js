@@ -15,15 +15,24 @@ import UploadLight from "./upload-light.svg";
 
 import LandingPageBackground from "./landing-page.jpg";
 import ChevronLeft from "./chevron-left.svg";
+import ChevronRight from "./chevron-right.svg";
 import WarningIcon from "./warning.svg";
 import SuccessIcon from "./success.svg";
 
 import FilterLinesIcon from "./filter-lines.svg";
 import WishlistBanner from "./wishlist.svg";
 import VerifiedIcon from "./verified.svg";
-
+import LocationIcon from "./location.svg";
+import RatingIcon from "./rating.svg";
+import VerifiedPurpleIcon from "./verified-purple.png";
+import SettingIcon from "./setting.svg";
 
 export {
+  ChevronRight,
+  SettingIcon,
+  LocationIcon,
+  RatingIcon,
+  VerifiedPurpleIcon,
   VerifiedIcon,
   WishlistBanner,
   FilterLinesIcon,
