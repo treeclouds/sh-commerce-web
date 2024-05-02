@@ -1,19 +1,58 @@
-import React from "react";
-import { Gap, Header, Menu } from "../../components";
+import React, { useState } from "react";
+import { Card as CardProduct, Gap, Header, Menu } from "../../components";
 import {
-  PicturWrapper,
-  DetailWrapper,
-  WrapperProfile,
-  WrapperOrder,
-  CustomBadge,
-} from "./element";
-import {
+  ChevronRight,
+  FilterLinesIcon,
   LocationIcon,
   RatingIcon,
   VerifiedPurpleIcon,
-  ChevronRight,
 } from "../../images";
+import {
+  CustomBadge,
+  CustomTabs,
+  DetailWrapper,
+  PicturWrapper,
+  WrapperOrder,
+  WrapperProfile,
+  GreyBackgroundTextField,
+} from "./element";
+import Tab from "@mui/material/Tab";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { CardFilter, ScrollableContainer } from "../home/element";
+import { useNavigate } from "react-router-dom";
+
 const Profile = () => {
+  const navigate = useNavigate();
+
+  const a11yProps = (index) => {
+    return {
+      id: `full-width-tab-${index}`,
+      "aria-controls": `full-width-tabpanel-${index}`,
+    };
+  };
+  const CustomTabPanel = (props) => {
+    const { children, value, index, ...other } = props;
+
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`simple-tabpanel-${index}`}
+        aria-labelledby={`simple-tab-${index}`}
+        {...other}
+      >
+        {value === index && <React.Fragment>{children}</React.Fragment>}
+      </div>
+    );
+  };
+
+  const [value, setValue] = useState(0);
+  const [setState] = useState(true);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <WrapperProfile>
       <Header title="My Profile" returnIcon={"false"} />
@@ -70,6 +109,86 @@ const Profile = () => {
           <img src={ChevronRight} alt="arrow" />
         </div>
       </WrapperOrder>
+      <Gap height={"20px"} />
+
+      <div>
+        <CustomTabs
+          value={value}
+          onChange={handleChange}
+          O
+          textColor="inherit"
+          variant="fullWidth"
+          aria-label="full width tabs example"
+        >
+          <Tab label="Listing" {...a11yProps(0)} />
+          <Tab label="Transaction" {...a11yProps(1)} />
+        </CustomTabs>
+      </div>
+      <Gap height={"20px"} />
+      <CustomTabPanel value={value} index={0}>
+        <div>
+          <GreyBackgroundTextField
+            id="filled-start-adornment"
+            fullWidth
+            InputProps={{
+              startAdornment: <SearchOutlinedIcon position="start" />,
+            }}
+            variant="outlined"
+          />
+          <Gap height={"10px"} />
+
+          <ScrollableContainer>
+            <CardFilter className="with-icon" onClick={() => setState(true)}>
+              <img src={FilterLinesIcon} alt="icon-filter" />
+              <p>Filter </p>
+            </CardFilter>
+            <CardFilter>Location</CardFilter>
+            <CardFilter>Brand</CardFilter>
+            <CardFilter>Category</CardFilter>
+          </ScrollableContainer>
+          <Gap height="10px" />
+
+          <div className="card-container">
+            <CardProduct
+              type="mint"
+              onClick={() => navigate("/product-detail/1")}
+            />
+            <CardProduct type="like" />
+            <CardProduct type="mint" />
+            <CardProduct type="like" />
+            <CardProduct type="like" />
+            <CardProduct type="new" />
+          </div>
+        </div>
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={1}>
+        <>
+          <WrapperOrder>
+            <div className="order-content">
+              <div>
+                <p className="label-med">My Earning</p>
+                <p className="h5 bold">Rp. 500,000</p>
+              </div>
+            </div>
+            <div>
+              <img src={ChevronRight} alt="arrow" />
+            </div>
+          </WrapperOrder>
+          <Gap height={"10px"} />
+
+          <WrapperOrder>
+            <div className="order-content">
+              <div>
+                <p className="label-med">Another Earning</p>
+                <p className="h5 bold">Rp. 600,000</p>
+              </div>
+            </div>
+            <div>
+              <img src={ChevronRight} alt="arrow" />
+            </div>
+          </WrapperOrder>
+        </>
+      </CustomTabPanel>
 
       <Menu />
     </WrapperProfile>

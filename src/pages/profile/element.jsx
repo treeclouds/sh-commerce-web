@@ -2,9 +2,19 @@ import styled from "styled-components";
 import { colors } from "../../utils";
 import Badge from "@mui/material/Badge";
 
+import Tabs from "@mui/material/Tabs";
+import { TextField } from "@mui/material";
+
 export const WrapperProfile = styled.div`
   display: grid;
   padding: 5%;
+
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+  }
 `;
 export const PicturWrapper = styled.div`
   display: grid;
@@ -61,5 +71,17 @@ export const CustomBadge = styled(Badge)`
     background-color: ${colors.green500};
     color: white;
     font-weight: bold;
+  }
+`;
+
+export const CustomTabs = styled(Tabs)`
+  .MuiTabs-indicator {
+    background-color: ${colors.green500};
+  }
+`;
+
+export const GreyBackgroundTextField = styled(TextField)`
+  & .MuiOutlinedInput-root {
+    background-color: ${colors.grey100};
   }
 `;
