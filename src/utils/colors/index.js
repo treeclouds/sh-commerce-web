@@ -13,22 +13,23 @@ export const colors = {
   grey5: "#ABBAC2",
   grey6: "#BDBDBD",
   grey7: "#C4C4C4",
-  grey100:"#F4F5F7",
+  grey100: "#F4F5F7",
 
   black: "#000000",
 
   green: "#0E9F6E",
-  green100:"#DEF7EC",
-  green700:"#046C4E",
+  green100: "#DEF7EC",
+  green500: "#0E9F6E",
+  green700: "#046C4E",
 
-  blue100:"#E1EFFE",
-  blue700:"#1A56DB",
-  
-  teal100:"#D5F5F6",
-  teal700:"#036672",
+  blue100: "#E1EFFE",
+  blue700: "#1A56DB",
 
-  natural40:"#E0E0E0",
-  natural80:"#616161",
+  teal100: "#D5F5F6",
+  teal700: "#036672",
 
-  purple700:"#6C2BD9"
+  natural40: "#E0E0E0",
+  natural80: "#616161",
+
+  purple700: "#6C2BD9",
 };

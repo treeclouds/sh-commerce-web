@@ -1,18 +1,21 @@
-import React from 'react'
-import { ChevronLeft } from '../../images'
-import { Wrapper } from './element'
-import { useNavigate  } from 'react-router-dom';
+import React from "react";
+import { ChevronLeft, SettingIcon } from "../../images";
+import { Wrapper } from "./element";
+import { useNavigate } from "react-router-dom";
 
-const Header = ({title="use Props title"}) => {
-  const navigate  = useNavigate()
+const Header = ({ title = "use Props title", returnIcon = "true" }) => {
+  const navigate = useNavigate();
   return (
     <Wrapper>
-      <div onClick={()=> navigate(-1)}>
-        <img src={ChevronLeft} alt="Back" />
+      <div onClick={() => navigate(-1)}>
+        {returnIcon === "true" && <img src={ChevronLeft} alt="Back" />}
       </div>
-      <div className='h4-bold title'>{title}</div>
+      <div className="h4-bold title">{title}</div>
+      <div className="h4-bold title" onClick={() => alert("go to setting")}>
+        {returnIcon !== "true" && <img src={SettingIcon} alt="setting" />}
+      </div>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
