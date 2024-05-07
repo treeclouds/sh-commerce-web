@@ -14,6 +14,9 @@ export const colors = {
   grey6: "#BDBDBD",
   grey7: "#C4C4C4",
   grey100: "#F4F5F7",
+  grey400: "#9FA6B2",
+  grey700: "#374151",
+  greyBackground: "#F9FAFB",
 
   black: "#000000",
 
@@ -32,4 +35,5 @@ export const colors = {
   natural80: "#616161",
 
   purple700: "#6C2BD9",
+  red500: "#F05252",
 };

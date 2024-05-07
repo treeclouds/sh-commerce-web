@@ -11,7 +11,10 @@ const Header = ({ title = "use Props title", returnIcon = "true" }) => {
         {returnIcon === "true" && <img src={ChevronLeft} alt="Back" />}
       </div>
       <div className="h4-bold title">{title}</div>
-      <div className="h4-bold title" onClick={() => alert("go to setting")}>
+      <div
+        className="h4-bold title"
+        onClick={() => navigate("/profile-settings")}
+      >
         {returnIcon !== "true" && <img src={SettingIcon} alt="setting" />}
       </div>
     </Wrapper>

@@ -15,6 +15,7 @@ import {
   WrapperOrder,
   WrapperProfile,
   GreyBackgroundTextField,
+  ScrollableBox,
 } from "./element";
 import Tab from "@mui/material/Tab";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
@@ -91,7 +92,10 @@ const Profile = () => {
           <img src={LocationIcon} alt="verified" />
           <div className="caption-reg">Happy Town, Capital City</div>
         </div>
-        <div className="detail-items">
+        <div
+          className="detail-items"
+          onClick={() => navigate("/profile-rating")}
+        >
           <img src={RatingIcon} alt="verified" />
           <div className="caption-semibold"> 5.0 • Very Responsive</div>
         </div>
@@ -115,7 +119,6 @@ const Profile = () => {
         <CustomTabs
           value={value}
           onChange={handleChange}
-          O
           textColor="inherit"
           variant="fullWidth"
           aria-label="full width tabs example"
@@ -159,10 +162,11 @@ const Profile = () => {
             <CardProduct type="like" />
             <CardProduct type="new" />
           </div>
+          <Gap height={"80px"} />
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <>
+        <ScrollableBox>
           <WrapperOrder>
             <div className="order-content">
               <div>
@@ -187,7 +191,9 @@ const Profile = () => {
               <img src={ChevronRight} alt="arrow" />
             </div>
           </WrapperOrder>
-        </>
+
+          <Gap height={"50px"} />
+        </ScrollableBox>
       </CustomTabPanel>
 
       <Menu />
