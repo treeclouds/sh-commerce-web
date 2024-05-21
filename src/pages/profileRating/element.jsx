@@ -4,10 +4,9 @@ import Badge from "@mui/material/Badge";
 
 import Tabs from "@mui/material/Tabs";
 import { TextField } from "@mui/material";
-
+import LinearProgress from "@mui/material/LinearProgress";
 export const WrapperProfile = styled.div`
   display: grid;
-  padding: 5%;
 
   .card-container {
     display: grid;
@@ -89,4 +88,90 @@ export const GreyBackgroundTextField = styled(TextField)`
 export const ScrollableBox = styled.div`
   display: grid;
   overflow-x: auto;
+`;
+
+export const ContentAllWrapper = styled.div`
+  padding: 5%;
+
+  .separator {
+    border-right: 1px solid ${colors.natural40};
+    height: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .section-rating-score {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  .star-section {
+    img {
+      width: 16px;
+      height: 16px;
+      object-fit: cover;
+    }
+  }
+  .h1-bold {
+    font-family: Inter;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .grey {
+    color: ${colors.grey700};
+  }
+  .progress-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  .progress-section {
+    padding: 0 5%;
+  }
+`;
+
+export const StyledLinearProgress = styled(LinearProgress)`
+  &.css-eglki6-MuiLinearProgress-root {
+    height: 10px; /* Set the custom height */
+    border-radius: 5px; /* Set the border radius */
+
+    .MuiLinearProgress-barColorPrimary {
+      background-color: #faca15; /* Set the custom progress bar color */
+    }
+  }
+`;
+
+export const CommentSection = styled.div`
+  display: grid;
+  grid-template-columns: 30% auto;
+  margin-bottom: 5%;
+  background-color: ${colors.backgroundColor};
+  padding: 5% 0;
+
+  p {
+    text-align: justify;
+  }
+  img {
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+  }
+  .rate-comment-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      width: 13px;
+      height: 13px;
+      object-fit: cover;
+    }
+  }
+`;
+
+export const CommentContainer = styled.div`
+  background-color: ${colors.greyBackground};
 `;

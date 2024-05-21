@@ -26,9 +26,9 @@ export const HomeWrapper = styled.div`
 `;
 
 export const ScrollableContainer = styled.div`
-  display: grid;
-  grid-auto-flow: column; /* Arrange grid items in columns horizontally */
-  gap: 3%; /* Add gap between grid items */
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
   overflow-x: auto; /* Enable horizontal scrolling */
 `;
 
@@ -40,22 +40,18 @@ export const CardFilter = styled.div`
   padding: 10px;
   align-items: center;
   display: grid;
-  grid-template-columns: auto 1fr ;
- 
+  grid-template-columns: auto 1fr;
 `;
 
 export const DragboxContainer = styled.div`
   display: grid;
-  padding:5% ;
+  padding: 5%;
 
-  .list-filter{
+  .list-filter {
     display: flex;
     flex-direction: row;
-    justify-content: space-between ;
-    align-items: center ;
+    justify-content: space-between;
+    align-items: center;
     padding: 5% 0;
   }
-
-`
-
-
+`;

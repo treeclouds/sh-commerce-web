@@ -27,7 +27,28 @@ import RatingIcon from "./rating.svg";
 import VerifiedPurpleIcon from "./verified-purple.png";
 import SettingIcon from "./setting.svg";
 
+import ProfileIconSetting from "./profile-icon.svg";
+import BlockedAccountIcon from "./blocked-icon.svg";
+import ChangePasswordIcon from "./change-password-icon.svg";
+import CustomerServiceIcon from "./customer-service-icon.svg";
+import DeleteAccountIcon from "./delete-account-icon.svg";
+import FAQIcon from "./faq-icon.svg";
+import HelpCenterIcon from "./help-center-icon.svg";
+import HouseIcon from "./house-icon.svg";
+import NotificationIcon from "./notification-icon.svg";
+import TennisRacket from "./tennis-racket.png";
+
 export {
+  TennisRacket,
+  BlockedAccountIcon,
+  ChangePasswordIcon,
+  CustomerServiceIcon,
+  DeleteAccountIcon,
+  FAQIcon,
+  HelpCenterIcon,
+  HouseIcon,
+  NotificationIcon,
+  ProfileIconSetting,
   ChevronRight,
   SettingIcon,
   LocationIcon,
